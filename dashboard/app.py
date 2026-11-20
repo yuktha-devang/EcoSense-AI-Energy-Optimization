@@ -18,7 +18,7 @@ st.write(
 )
 
 # Load cleaned dataset
-data = pd.read_csv("ecosense_cleaned_data.csv")
+data = pd.read_csv("data/ecosense_cleaned_data.csv")
 data["timestamp"] = pd.to_datetime(data["timestamp"])
 
 st.success("Energy dataset loaded successfully!")
