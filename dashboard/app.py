@@ -333,5 +333,15 @@ comparison_ax.grid(alpha=0.3)
 
 st.pyplot(comparison_fig)
 plt.close(comparison_fig)
+st.subheader("📊 Building Energy Consumption Comparison")
+
+comparison_data = data[["building_1", "building_2"]].tail(24)
+
+st.line_chart(comparison_data)
+
+st.caption(
+    "Comparison of the latest 24 hourly readings "
+    "for Building 1 and Building 2."
+)
 
 
