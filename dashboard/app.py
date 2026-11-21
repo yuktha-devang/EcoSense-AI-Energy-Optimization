@@ -28,6 +28,32 @@ with gzip.open("models/building_2_model.joblib.gz", "rb") as f:
     model_2 = joblib.load(f)
 
 st.success("AI forecasting models loaded successfully!")
+st.subheader("🔮 Next-Hour Energy Forecast")
+
+if building == "building_1":
+    selected_model = model_1
+else:
+    selected_model = model_2
+
+data["timestamp"] = pd.to_datetime(data["timestamp"])
+
+latest_time = data["timestamp"].iloc[-1]
+
+prediction_input = pd.DataFrame([{
+    "hour": latest_time.hour,
+    "day_of_week": latest_time.dayofweek,
+    "month": latest_time.month,
+    "lag_1": data[building].iloc[-1],
+    "lag_24": data[building].iloc[-24],
+    "rolling_mean_24": data[building].tail(24).mean()
+}])
+
+prediction = selected_model.predict(prediction_input)[0]
+
+st.metric(
+    "Predicted Next-Hour Reading",
+    round(prediction, 2)
+)
 data["timestamp"] = pd.to_datetime(data["timestamp"])
 
 st.success("Energy dataset loaded successfully!")
