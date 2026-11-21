@@ -64,10 +64,11 @@ div[data-testid="stMetricLabel"] {
 div[data-testid="stMetricDelta"] {
     color: #166534 !important;
 }
+
+</style>
 .stMarkdown p {
     color: #1f2937 !important;
 }
-</style>
 </style>
 """, unsafe_allow_html=True)
 
