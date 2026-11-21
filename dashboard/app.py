@@ -11,12 +11,17 @@ st.set_page_config(
     layout="wide"
 )
 
+
 st.markdown("""
 <style>
+
+/* Main dashboard background */
 .stApp {
     background: linear-gradient(135deg, #f0fdf4, #ecfeff);
+    color: #1f2937 !important;
 }
 
+/* Main headings */
 h1 {
     color: #14532d !important;
     font-weight: 800 !important;
@@ -24,99 +29,72 @@ h1 {
 
 h2, h3 {
     color: #166534 !important;
+    font-weight: 800 !important;
 }
 
-div[data-testid="stMetricLabel"] {
+/* Paragraph text */
+.stMarkdown p {
+    color: #374151 !important;
+}
+
+/* Slider labels */
+.stSlider label,
+.stSlider label p {
     color: #111827 !important;
-    font-size: 17px !important;
-    font-weight: 800 !important;
-    opacity: 1 !important;
-}
-
-div[data-testid="stMetricLabel"] p {
-    color: #111827 !important;
-    font-size: 17px !important;
-    font-weight: 800 !important;
-}
-
-.stButton button, 
-.stDownloadButton button {
-    background-color: #15803d;
-    color: white;
-    border-radius: 10px;
-    border: none;
-}
-/* Existing design code stays here */
-
-/* ADD NEW CODE HERE */
-
-div[data-testid="stMetricValue"] {
-    color: #14532d !important;
-    font-size: 30px !important;
-    font-weight: 800 !important;
-}
-
-div[data-testid="stMetricLabel"] {
-    color: #1f2937 !important;
     font-weight: 700 !important;
 }
 
-div[data-testid="stMetricDelta"] {
-    color: #166534 !important;
-}
-
-</style>
-.stMarkdown p {
-    color: #1f2937 !important;
-}
-/* Fix dashboard text visibility */
-.stMarkdown p {
-    color: #374151 !important;
-}
-
-.stSlider label,
-.stSlider label p {
-    color: #374151 !important;
-}
-
+/* Widget labels */
 [data-testid="stWidgetLabel"] p {
-    color: #374151 !important;
-}
-
-[data-testid="stCaptionContainer"] p {
-    color: #4b5563 !important;
-}
-
-.stMarkdown h1,
-.stMarkdown h2,
-.stMarkdown h3 {
-    color: #166534 !important;
-}
-/* Make all metric labels bold and dark */
-[data-testid="stMetricLabel"] {
     color: #111827 !important;
-    font-weight: 900 !important;
-    opacity: 1 !important;
+    font-weight: 700 !important;
 }
 
+/* Metric labels - Current Total, Potential Reduction, etc. */
+[data-testid="stMetricLabel"],
+[data-testid="stMetricLabel"] p,
 [data-testid="stMetricLabel"] * {
     color: #111827 !important;
     font-weight: 900 !important;
     opacity: 1 !important;
 }
 
-/* Make metric numbers bold */
+/* Metric numbers */
 [data-testid="stMetricValue"],
 [data-testid="stMetricValue"] * {
     color: #14532d !important;
     font-weight: 900 !important;
 }
 
-/* Make captions readable */
+/* Metric delta */
+[data-testid="stMetricDelta"] {
+    color: #166534 !important;
+}
+
+/* Caption text */
 [data-testid="stCaptionContainer"] p {
     color: #374151 !important;
     font-weight: 600 !important;
+    opacity: 1 !important;
 }
+
+/* Buttons */
+.stButton button,
+.stDownloadButton button {
+    background-color: #15803d !important;
+    color: white !important;
+    border-radius: 10px !important;
+    border: none !important;
+    font-weight: 700 !important;
+}
+
+/* Button hover */
+.stButton button:hover,
+.stDownloadButton button:hover {
+    background-color: #166534 !important;
+    color: white !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
