@@ -113,6 +113,11 @@ designed to monitor, predict and optimize building energy consumption.
 - 💡 Provide energy optimization recommendations.
 - 🌱 Estimate potential energy savings.
 """)
+col1, col2, col3 = st.columns(3)
+
+col1.metric("🏢 Total Buildings", "2")
+col2.metric("🤖 AI Models", "2")
+col3.metric("🔮 Forecasting", "Next Hour")
 st.subheader("Intelligent Energy Consumption Optimization System")
 
 st.write(
