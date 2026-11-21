@@ -393,5 +393,42 @@ st.markdown("""
 <div class="workflow-arrow">⬇️</div>
 <div class="workflow-box">💡 Recommendations & Energy Savings</div>
 """, unsafe_allow_html=True)
+st.subheader("🌱 About EcoSense AI")
 
+st.write("""
+EcoSense AI is an intelligent energy consumption analysis
+and optimization system developed to help buildings
+understand and improve their energy usage.
+
+It uses historical energy data and Machine Learning
+to predict future consumption, identify unusual usage
+and provide useful energy optimization recommendations.
+""")
+
+st.markdown("### 🛠️ Technologies Used")
+
+st.markdown("""
+- Python
+- Pandas and NumPy
+- Scikit-learn
+- Random Forest Regression
+- Streamlit
+- Matplotlib
+- Google Colab
+""")
+
+st.markdown("### 🚀 Future Scope")
+
+st.markdown("""
+- Integration with IoT energy sensors.
+- Real-time energy consumption monitoring.
+- Smart alerts for unusual energy usage.
+- Advanced AI-based energy optimization.
+- Expansion to more buildings and industries.
+""")
+
+st.info(
+    "EcoSense AI aims to support smarter buildings "
+    "through data-driven energy management."
+)
 
