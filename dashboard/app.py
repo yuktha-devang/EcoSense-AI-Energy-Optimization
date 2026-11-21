@@ -26,12 +26,17 @@ h2, h3 {
     color: #166534 !important;
 }
 
-div[data-testid="stMetric"] {
-    background: white;
-    padding: 18px;
-    border-radius: 14px;
-    border: 1px solid #bbf7d0;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+div[data-testid="stMetricLabel"] {
+    color: #111827 !important;
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    opacity: 1 !important;
+}
+
+div[data-testid="stMetricLabel"] p {
+    color: #111827 !important;
+    font-size: 17px !important;
+    font-weight: 800 !important;
 }
 
 .stButton button, 
@@ -59,7 +64,9 @@ div[data-testid="stMetricLabel"] {
 div[data-testid="stMetricDelta"] {
     color: #166534 !important;
 }
-
+.stMarkdown p {
+    color: #1f2937 !important;
+}
 </style>
 </style>
 """, unsafe_allow_html=True)
