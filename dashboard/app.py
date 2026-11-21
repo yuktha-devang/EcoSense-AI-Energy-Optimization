@@ -168,3 +168,54 @@ st.download_button(
     file_name=f"EcoSense_{building}_Report.csv",
     mime="text/csv"
 )
+
+st.subheader("💰 Energy Savings Calculator")
+
+st.write(
+    "Estimate potential savings by reducing building energy consumption."
+)
+
+# Select reduction percentage
+reduction = st.slider(
+    "Select Consumption Reduction (%)",
+    min_value=5,
+    max_value=15,
+    value=10,
+    step=5
+)
+
+# Calculate potential reduction
+total_readings = data[building].dropna().sum()
+
+potential_savings = total_readings * reduction / 100
+remaining_readings = total_readings - potential_savings
+
+col1, col2, col3 = st.columns(3)
+
+col1.metric(
+    "Current Total Readings",
+    round(total_readings, 2)
+)
+
+col2.metric(
+    "Potential Reduction",
+    round(potential_savings, 2)
+)
+
+col3.metric(
+    "Estimated Remaining Readings",
+    round(remaining_readings, 2)
+)
+
+st.success(
+    f"A {reduction}% reduction could save "
+    f"{potential_savings:.2f} reading units "
+    f"over the selected dataset period."
+)
+
+st.caption(
+    "This is a theoretical estimate, not measured energy savings. "
+    "The dataset's measurement unit must be confirmed before "
+    "converting these values into kWh or electricity costs."
+)
+
