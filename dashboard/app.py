@@ -361,5 +361,37 @@ st.caption(
     "Comparison of the latest 24 hourly readings "
     "for Building 1 and Building 2."
 )
+st.subheader("⚙️ How EcoSense AI Works")
+
+st.markdown("""
+<style>
+.workflow-box {
+    background-color: #e8f5e9;
+    color: #14532d;
+    padding: 15px;
+    margin: 8px 0;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    border: 1px solid #86efac;
+}
+.workflow-arrow {
+    text-align: center;
+    color: #15803d;
+    font-size: 24px;
+}
+</style>
+
+<div class="workflow-box">📂 Historical Energy Data</div>
+<div class="workflow-arrow">⬇️</div>
+<div class="workflow-box">🧹 Data Cleaning & Processing</div>
+<div class="workflow-arrow">⬇️</div>
+<div class="workflow-box">🤖 Random Forest AI Model</div>
+<div class="workflow-arrow">⬇️</div>
+<div class="workflow-box">🔍 Prediction & Unusual Usage Detection</div>
+<div class="workflow-arrow">⬇️</div>
+<div class="workflow-box">💡 Recommendations & Energy Savings</div>
+""", unsafe_allow_html=True)
 
 
