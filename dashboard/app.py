@@ -41,7 +41,26 @@ div[data-testid="stMetric"] {
     border-radius: 10px;
     border: none;
 }
+/* Existing design code stays here */
 
+/* ADD NEW CODE HERE */
+
+div[data-testid="stMetricValue"] {
+    color: #14532d !important;
+    font-size: 30px !important;
+    font-weight: 800 !important;
+}
+
+div[data-testid="stMetricLabel"] {
+    color: #1f2937 !important;
+    font-weight: 700 !important;
+}
+
+div[data-testid="stMetricDelta"] {
+    color: #166534 !important;
+}
+
+</style>
 </style>
 """, unsafe_allow_html=True)
 
