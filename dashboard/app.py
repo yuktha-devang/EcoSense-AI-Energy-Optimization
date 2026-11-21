@@ -11,6 +11,41 @@ st.set_page_config(
     layout="wide"
 )
 
+st.markdown("""
+<style>
+.stApp {
+    background: linear-gradient(135deg, #f0fdf4, #ecfeff);
+}
+
+h1 {
+    color: #14532d !important;
+    font-weight: 800 !important;
+}
+
+h2, h3 {
+    color: #166534 !important;
+}
+
+div[data-testid="stMetric"] {
+    background: white;
+    padding: 18px;
+    border-radius: 14px;
+    border: 1px solid #bbf7d0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.stButton button, 
+.stDownloadButton button {
+    background-color: #15803d;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
+
 st.title("🌱 EcoSense AI")
 st.subheader("Intelligent Energy Consumption Optimization System")
 
