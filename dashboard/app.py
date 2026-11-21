@@ -102,3 +102,34 @@ else:
         "Consumption is within the normal range. "
         "Continue monitoring."
     )
+    st.subheader("🚨 Unusual Energy Consumption Detection")
+
+if len(data) >= 25:
+
+    recent_values = data[building].iloc[-25:-1]
+    latest_value = data[building].iloc[-1]
+
+    baseline_mean = recent_values.mean()
+    baseline_std = recent_values.std()
+
+    threshold = baseline_mean + (2 * baseline_std)
+
+    st.write("Comparing the latest reading with the previous 24 hours.")
+
+    col1, col2 = st.columns(2)
+
+    col1.metric("24-Hour Average", round(baseline_mean, 2))
+    col2.metric("Detection Threshold", round(threshold, 2))
+
+    if latest_value > threshold:
+        st.warning(
+            "Unusual high consumption detected! "
+            "Check HVAC, lighting and unused equipment."
+        )
+    else:
+        st.success(
+            "No unusual high consumption detected."
+        )
+
+else:
+    st.info("Not enough historical readings for detection.")
