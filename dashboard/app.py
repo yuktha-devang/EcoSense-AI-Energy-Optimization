@@ -69,6 +69,29 @@ div[data-testid="stMetricDelta"] {
 .stMarkdown p {
     color: #1f2937 !important;
 }
+/* Fix dashboard text visibility */
+.stMarkdown p {
+    color: #374151 !important;
+}
+
+.stSlider label,
+.stSlider label p {
+    color: #374151 !important;
+}
+
+[data-testid="stWidgetLabel"] p {
+    color: #374151 !important;
+}
+
+[data-testid="stCaptionContainer"] p {
+    color: #4b5563 !important;
+}
+
+.stMarkdown h1,
+.stMarkdown h2,
+.stMarkdown h3 {
+    color: #166534 !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
