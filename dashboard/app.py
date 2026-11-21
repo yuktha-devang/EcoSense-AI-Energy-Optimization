@@ -28,6 +28,16 @@ with gzip.open("models/building_2_model.joblib.gz", "rb") as f:
     model_2 = joblib.load(f)
 
 st.success("AI forecasting models loaded successfully!")
+
+data["timestamp"] = pd.to_datetime(data["timestamp"])
+
+st.success("Energy dataset loaded successfully!")
+
+# Building selection
+building = st.selectbox(
+    "Select Building",
+    ["building_1", "building_2"]
+)
 st.subheader("🔮 Next-Hour Energy Forecast")
 
 if building == "building_1":
@@ -54,16 +64,6 @@ st.metric(
     "Predicted Next-Hour Reading",
     round(prediction, 2)
 )
-data["timestamp"] = pd.to_datetime(data["timestamp"])
-
-st.success("Energy dataset loaded successfully!")
-
-# Building selection
-building = st.selectbox(
-    "Select Building",
-    ["building_1", "building_2"]
-)
-
 average = data[building].mean()
 latest = data[building].iloc[-1]
 
