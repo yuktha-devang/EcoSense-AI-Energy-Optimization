@@ -254,3 +254,31 @@ st.caption(
     "converting these values into kWh or electricity costs."
 )
 
+st.subheader("🏢 Building Energy Comparison")
+
+comparison_fig, comparison_ax = plt.subplots(figsize=(12, 5))
+
+comparison_ax.plot(
+    data["timestamp"],
+    data["building_1"],
+    label="Building 1",
+    linewidth=2
+)
+
+comparison_ax.plot(
+    data["timestamp"],
+    data["building_2"],
+    label="Building 2",
+    linewidth=2
+)
+
+comparison_ax.set_xlabel("Date and Time")
+comparison_ax.set_ylabel("Energy Reading")
+comparison_ax.set_title("Building 1 vs Building 2")
+comparison_ax.legend()
+comparison_ax.grid(alpha=0.3)
+
+st.pyplot(comparison_fig)
+plt.close(comparison_fig)
+
+
