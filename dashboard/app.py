@@ -100,6 +100,19 @@ h2, h3 {
 
 
 st.title("🌱 EcoSense AI")
+st.markdown("""
+### Intelligent Energy Consumption Optimization System
+
+EcoSense AI is an AI-powered energy analysis platform
+designed to monitor, predict and optimize building energy consumption.
+
+**Our main objectives:**
+- 📊 Analyze energy consumption patterns.
+- 🔮 Predict next-hour energy demand using Machine Learning.
+- 🚨 Detect unusual energy consumption.
+- 💡 Provide energy optimization recommendations.
+- 🌱 Estimate potential energy savings.
+""")
 st.subheader("Intelligent Energy Consumption Optimization System")
 
 st.write(
