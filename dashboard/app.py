@@ -133,3 +133,38 @@ if len(data) >= 25:
 
 else:
     st.info("Not enough historical readings for detection.")
+    st.subheader("📥 Download Energy Analysis Report")
+
+# Prepare report data
+report_data = pd.DataFrame({
+    "Timestamp": data["timestamp"],
+    "Building": building,
+    "Energy_Reading": data[building]
+})
+
+# Add AI forecast information
+report_data["Latest_Reading"] = round(latest, 2)
+report_data["Average_Reading"] = round(average, 2)
+report_data["Predicted_Next_Hour"] = round(prediction, 2)
+
+# Add anomaly detection result
+if len(data) >= 25:
+    detection_status = (
+        "Unusual High Consumption"
+        if latest_value > threshold
+        else "No Unusual Consumption"
+    )
+else:
+    detection_status = "Insufficient Historical Data"
+
+report_data["Detection_Result"] = detection_status
+
+# Convert report to CSV
+csv_report = report_data.to_csv(index=False).encode("utf-8")
+
+st.download_button(
+    label="⬇️ Download Energy Report",
+    data=csv_report,
+    file_name=f"EcoSense_{building}_Report.csv",
+    mime="text/csv"
+)
