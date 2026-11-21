@@ -2,6 +2,8 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import gzip
+import joblib
 
 st.set_page_config(
     page_title="EcoSense AI",
@@ -19,6 +21,13 @@ st.write(
 
 # Load cleaned dataset
 data = pd.read_csv("data/ecosense_cleaned_data.csv")
+with gzip.open("models/building_1_model.joblib.gz", "rb") as f:
+    model_1 = joblib.load(f)
+
+with gzip.open("models/building_2_model.joblib.gz", "rb") as f:
+    model_2 = joblib.load(f)
+
+st.success("AI forecasting models loaded successfully!")
 data["timestamp"] = pd.to_datetime(data["timestamp"])
 
 st.success("Energy dataset loaded successfully!")
