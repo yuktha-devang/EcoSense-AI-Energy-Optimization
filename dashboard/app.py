@@ -92,6 +92,31 @@ div[data-testid="stMetricDelta"] {
 .stMarkdown h3 {
     color: #166534 !important;
 }
+/* Make all metric labels bold and dark */
+[data-testid="stMetricLabel"] {
+    color: #111827 !important;
+    font-weight: 900 !important;
+    opacity: 1 !important;
+}
+
+[data-testid="stMetricLabel"] * {
+    color: #111827 !important;
+    font-weight: 900 !important;
+    opacity: 1 !important;
+}
+
+/* Make metric numbers bold */
+[data-testid="stMetricValue"],
+[data-testid="stMetricValue"] * {
+    color: #14532d !important;
+    font-weight: 900 !important;
+}
+
+/* Make captions readable */
+[data-testid="stCaptionContainer"] p {
+    color: #374151 !important;
+    font-weight: 600 !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
